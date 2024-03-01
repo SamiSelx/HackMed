@@ -1,12 +1,15 @@
 import Landing from './Landing'
-import ServiceHome from './ServiceHome'
+import Pricing from './Pricing'
+import Services from './Services'
+import About from './About'
 
 export default function Main(){
     return(
         <>
             <Landing />
-            <ServiceHome />
-
+            <Services />
+            <Pricing/>
+            <About />
         </>
     )
 }
