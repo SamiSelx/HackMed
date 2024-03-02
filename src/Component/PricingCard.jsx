@@ -12,11 +12,11 @@ export default function PricingCard({type,price,isPopular}){
             <div>
                 <h2>{price == 0 ? "What you get" : "All free features,plus"}</h2>
                 <ul className="pricing-list">
-                    <li><FaCheck style={{color:"blue",marginRight:"10px"}}/> Task Management</li>
-                    <li><FaCheck style={{color:"blue",marginRight:"10px"}}/> Project Planing</li>
-                    <li><FaCheck style={{color:"blue",marginRight:"10px"}}/> Team Collaboration</li>
-                    <li><FaCheck style={{color:"blue",marginRight:"10px"}}/> Notification and Reminders</li>
-                    <li><FaCheck style={{color:"blue",marginRight:"10px"}}/> What you get</li>
+                    <li><FaCheck style={{color:"rgb(0 95 255)",marginRight:"15px"}}/> Task Management</li>
+                    <li><FaCheck style={{color:"rgb(0 95 255)",marginRight:"15px"}}/> Project Planing</li>
+                    <li><FaCheck style={{color:"rgb(0 95 255)",marginRight:"15px"}}/> Team Collaboration</li>
+                    <li><FaCheck style={{color:"rgb(0 95 255)",marginRight:"15px"}}/> Notification and Reminders</li>
+                    <li><FaCheck style={{color:"rgb(0 95 255)",marginRight:"15px"}}/> What you get</li>
                 </ul>
             </div>
             <button className="start-btn">Get Started</button>

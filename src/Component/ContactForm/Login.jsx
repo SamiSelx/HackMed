@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { FcGoogle } from "react-icons/fc";
+import { Link } from "react-router-dom"
 import axios from "axios"
 
 export default function Login(){
@@ -12,7 +13,13 @@ export default function Login(){
         ).then(res => {
             console.log(res.data)
             localStorage.setItem('token',res.data.token)
-        }).catch((e)=>console.log(e))
+            window.location.href = '/'
+        }).catch((e)=>{
+            if(e.response.status == 401){
+                alert("Password or Username Is Incorrect Please try again!!")
+            }
+            console.log(e)
+        })
     }
     return(
         <div className="login">
@@ -27,9 +34,9 @@ export default function Login(){
                 </div>
                 <button type="submit" className="sign-btn">Sign in</button>
             </form>
-            <p>Need an account? <button>Create one</button></p>
+            <p>Need an account? <Link to='/registre'><button>Create one</button></Link></p>
             <div className="or"></div>
-            <button className="sign-google-btn">Sign in with Google <FcGoogle /></button>{/*Icon */}
+            <button className="sign-google-btn">Sign in with Google <FcGoogle /></button>
            </div>
         </div>
     )

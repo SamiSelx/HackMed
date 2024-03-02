@@ -12,25 +12,21 @@ export default function About(){
                     <div className="accordion">
                         <span onClick={()=>setIsOpen(!isOpen)}></span>
                         <div></div>
-                        <ul style={{height:isOpen ? "80px": "0px",overflow:"hidden",transition:"0.7s"}}>
+                        <ul style={{height:isOpen ? "100px": "0px",overflow:"hidden",transition:"0.7s"}}>
                             <li>
                                 <h3>WHAT IS MOURAFIK ?</h3>
-                                <p>Monitor and gain insights into your health data to improve your overall well-being </p>
+                                <p style={{lineHeight:"1.5"}}>Monitor and gain insights into your health data to improve your overall well-being </p>
                             </li>
                             <li>
                                 <h3>OUR GOALS </h3>
-                                <p>Monitor and gain insights into your health data to improve your overall well-being </p>
-                            </li>
-                            <li>
-                                <h3>WHAT IS MOURAFIK</h3>
-                                <p>Monitor and gain insights into your health data to improve your overall well-being </p>
+                                <p style={{lineHeight:"1.5"}}>Monitor and gain insights into your health data to improve your overall well-being </p>
                             </li>
                         </ul>
                     </div>
                     <div className="accordion">
                     <span onClick={()=>setIsOpenSecond(!isOpenSecond)}></span>
                         <div></div>
-                        <h2 style={{padding:"10px 0"}}>MOURAFIK. DOCTOR List</h2>
+                        <h2 style={{padding:"10px 0"}}>MOURAFIK. Doctor List</h2>
 
                         <div className="list-doctor">
 

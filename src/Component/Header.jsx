@@ -7,14 +7,19 @@ import { UserContexts } from "../contexts/UserContexts"
 
 export default function Header(){
     const user = useContext(UserContexts)
+    function handleClickLogOut(){
+        if(!window.localStorage.getItem('token')) return
+        window.localStorage.setItem('token',"")
+        window.location.href = '/'
+    }
     return(
         <header>
             <nav className="container">
                 <Link to="/" style={{textDecoration:"none", color:"#2F2F2F"}}><h2 className="logo">MOURAFIK.</h2></Link>
                 <Navigator />
                 <div>
-                    {user.isLogged ? null : <Link to={'/login'}><button className="btn-login ">logIn</button></Link>}
-                    <Link to={!user.isLogged ? '/registre' : '/'}><button className="btn-join btn-primary">{user.isLogged ? "LogOut" : "Join Us"}</button></Link>
+                    {window.localStorage.getItem('token')  ? null : <Link to={'/login'}><button className="btn-login ">log in</button></Link>}
+                    <Link to={!window.localStorage.getItem('token') ? '/registre' : '/'}><button className="btn-join btn-primary" onClick={handleClickLogOut}>{window.localStorage.getItem('token')  ? "Log out" : "Join Us"}</button></Link>
                 </div>
             </nav>
         </header>

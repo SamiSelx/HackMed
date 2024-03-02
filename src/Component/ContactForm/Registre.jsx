@@ -1,5 +1,7 @@
 import { useState,useContext } from "react"
 import { RegistreContexts } from "../../contexts/RegistreContexts"
+import { FcGoogle } from "react-icons/fc";
+import { Link } from "react-router-dom";
 import CreateAccount from "./CreateAccount"
 import DateBirth from "./DateBirth"
 import axios from "axios"
@@ -14,14 +16,35 @@ export default function Registre(){
         e.preventDefault();
         const dateBirth = new Date(`${registre.dayBirth}/${registre.monthBirth}/${registre.yearBirth}`)
         const fullName = registre.firstName  + registre.lastName;
+        let body = {
+            "info":{
+                phone : registre.phoneNumber,
+                email : registre.email,
+                fullName: fullName,
+                password: registre.password,
+                birthDate: dateBirth,
+            },
+            "role":{
+                type: registre.type
+            }
+        }
+        console.log(body)
         axios.post('http://192.168.137.143:3139/api/user/registre',{
-            phone : registre.phoneNumber,
-            email : registre.email,
-            fullName: fullName,
-            password: registre.password,
-            birthDate: dateBirth,
-            type: registre.type
-        }).then((res)=>console.log(res.data)).catch((e)=>{console.log(e)})
+            "info":{
+                phone : registre.phoneNumber,
+                email : registre.email,
+                fullName: fullName,
+                password: registre.password,
+                birthDate: dateBirth,
+            },
+            "role":{
+                type: registre.type
+            }
+        }).then((res)=>{
+            let token = res.data.token
+            window.localStorage.setItem('token',token)
+            
+        }).catch((e)=>{console.log(e)})
     }
     return(
         <div className="login">
@@ -30,9 +53,9 @@ export default function Registre(){
          <form onSubmit={(e)=> handleSubmitRegistre(e)}>
              {!isNext ?  <CreateAccount isNext = {isNext} handleNext={handleNext}/> : <DateBirth/>}
          </form>
-         <p>Already have an account? <button>Sign in</button></p>
+         <p>Already have an account? <Link to='/login'><button>Sign in</button></Link></p>
          <div className="or"></div>
-         <button className="sign-google-btn">Sign in with Google </button>{/*Icon */}
+         <button className="sign-google-btn">Sign in with Google <FcGoogle/></button>
         </div>
      </div>   
     )

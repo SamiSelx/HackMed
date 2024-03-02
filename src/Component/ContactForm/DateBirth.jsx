@@ -24,7 +24,7 @@ export default function DateBirth(){
             </div>
         </div>
         </div>
-        <button type="submit" className="sign-btn">Sign In</button>
+        <button type="submit" className="sign-btn">Sign Up</button>
         </>
     )
 }

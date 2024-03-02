@@ -104,25 +104,47 @@ main{
   height: 100%;
   padding-top: 5%;
   color: var(--main-dark);
+  position: relative;
 }
 
 .image{
   position: relative;
   height: 400px;
-  overflow: hidden;
 }
 .image img{
   height: 100%;
 }
 
-.image .watch-img{
+main > .watch-img{
   position: absolute;
-  right: -20px;
+  right: 0;
   top: 50%;
   transform: translateY(-50%);
-  
-  /* animation-iteration-count: infinite; */
+  height: 500px;
+  width: 250px;
 
+}
+@media (max-width:1025px) {
+  main > .watch-img{
+    display: none;
+  }
+}
+@media (max-width:992px) {
+  .image{
+    display: none;
+  }
+  main .container{
+    justify-content: center;
+  }
+}
+@media (max-width:572px) {  
+  .main-content{
+    text-align: center;
+
+  }
+  .main-content h1{
+    font-size: 4em !important;
+  }
 }
 .image .watch-img.animationWatch{
   animation-name: watchMove;
@@ -251,7 +273,7 @@ main{
   padding: 25px;
   color: var(--main-dark);
   transition: 0.7s;
-  height: 250px;
+  height: 300px;
 }
 
 .service-card h3{
@@ -283,6 +305,24 @@ main{
   font-size: 1.01em;
   transition-delay: 0.7s;
   transition: background-color 0.7s;
+}
+
+.learn-service{
+  background-color: rgba(0,111,255,40%);
+  border-radius: 20px;
+  padding: 20px;
+  color: var(--main-color);
+  margin-top: 40px;
+}
+.learn-service > div{
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+.learn-service > p{
+  line-height: 1.5;
 }
 /*======Services Page=======*/
 
@@ -390,6 +430,9 @@ main{
 } */
 
 
+.pricing-content h2{
+  font-size: 2em;
+}
 
 .pricing-content p{
   margin-top: 5px;

@@ -4,9 +4,7 @@ import { FaHandHoldingMedical } from "react-icons/fa";
 import {useEffect} from 'react'
 
 export default function Landing(){
-    useEffect(()=>{
-
-    })
+    
     return(
         <main>
             <div className="container main">
@@ -21,13 +19,13 @@ export default function Landing(){
                 </div>
                 <div className="image">
                     <img src="./landingImg.png" alt="" />
-                    <img className="watch-img" src="./watch.png" alt="" onLoad={(e)=>{e.target.classList.add('animationWatch')}} />
                     <p>Track Your medical Health effectivly</p> {/*absolute */}
                     <p>gain insights into your health data</p>
                     <LuHeartPulse />
                     <FaHandHoldingMedical />
                 </div>
             </div>
+            <img className="watch-img" src="./watch.png" alt="" onLoad={(e)=>{e.target.classList.add('animationWatch')}} />
         </main>
     )
 }

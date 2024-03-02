@@ -1,18 +1,15 @@
 import { VscSettings } from "react-icons/vsc";
 import { IoIosArrowDown } from "react-icons/io";
 import { LuHeartPulse } from "react-icons/lu";
+import { UserContexts } from "../../contexts/UserContexts";
+import { useContext } from "react";
 
-
-
-const user = {
-    id:1,
-    name: "sami"
-}
 
 export default function Insights(){
+    const user = useContext(UserContexts)
     return(
         <div className="insights container">
-            <h1>Welcome {user.name}!</h1>
+            <h1>Welcome {user.fullName}!</h1>
             <div className="ins-content">
                 <div className="personal-track">
                     <h1>Personal Health Tracking.</h1>
