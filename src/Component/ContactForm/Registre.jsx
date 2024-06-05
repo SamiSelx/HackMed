@@ -48,7 +48,7 @@ export default function Registre(){
     }
     return(
         <div className="login">
-        <div>
+        <div className="container" >
         <h1>{!isNext ? "Create a new account" : "Date of birth"}</h1>
          <form onSubmit={(e)=> handleSubmitRegistre(e)}>
              {!isNext ?  <CreateAccount isNext = {isNext} handleNext={handleNext}/> : <DateBirth/>}

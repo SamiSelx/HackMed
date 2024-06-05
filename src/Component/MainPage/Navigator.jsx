@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 import { useState,useContext } from "react"
-import { UserContexts } from "../contexts/UserContexts"
+import { UserContexts } from "../../contexts/UserContexts"
 
 
 export default function Navigator(){

@@ -15,7 +15,7 @@ export default function ServicesDetails(){
             <div className="container">
                 <h2 className="title" style={{marginBottom:"10px"}}>OUR SERVICES</h2>
                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque illo porro sequi quam. Soluta fugit reiciendis.</p>
-                <div style={{display:"flex",alignItems:"center"}}>
+                <div className="serviceBoxDetails">
                 <div className=" learn-service">
                     <div>
                         {service.icon}
@@ -23,7 +23,7 @@ export default function ServicesDetails(){
                     </div>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci in illo reprehenderit nostrum dolorem, magni perspiciatis facere dolor. Molestiae minima ipsam laborum deleniti qui tempora corrupti enim officia quia vitae.</p>
                 </div>
-                <img src="./watch-complete.png" alt="" />
+                <img  src="../watch-complete.png" alt="" />
                 </div>
             </div>
         </div>

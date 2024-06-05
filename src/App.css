@@ -15,6 +15,7 @@ header{
   align-items: center;
   min-height: 8vh;
   color: var(--main-dark);
+  
 }
 
 header nav{
@@ -105,6 +106,7 @@ main{
   padding-top: 5%;
   color: var(--main-dark);
   position: relative;
+  overflow: hidden;
 }
 
 .image{
@@ -146,12 +148,12 @@ main > .watch-img{
     font-size: 4em !important;
   }
 }
-.image .watch-img.animationWatch{
+.watch-img.animationWatch{
   animation-name: watchMove;
   animation-duration: 1s;
   animation-timing-function: cubic-bezier(0.18, 0.12, 0.58, 1);
 }
-.image p{
+.image p,.image i{
   position: absolute;
   text-align: center;
   padding: 5px 10px;
@@ -166,6 +168,15 @@ main > .watch-img{
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   animation-fill-mode: both;
+}
+.image i:nth-last-of-type(1){
+  right: 15%;
+  top: 10px;
+}
+
+.image i:nth-last-of-type(2){
+  right: 15%;
+  bottom: 10px;
 }
 
 .image p:nth-of-type(1){
@@ -240,7 +251,7 @@ main > .watch-img{
     right: -100%;
   }
   100%{
-    right: -20px;
+    right: 0;
   }
   
 }
@@ -307,12 +318,17 @@ main > .watch-img{
   transition: background-color 0.7s;
 }
 
-.learn-service{
+.serviceBoxDetails{
+  display: flex;
+  align-items: center;
   background-color: rgba(0,111,255,40%);
   border-radius: 20px;
   padding: 20px;
-  color: var(--main-color);
   margin-top: 40px;
+  gap: 20px;
+}
+.learn-service{
+  color: var(--main-color);
 }
 .learn-service > div{
   display: flex;
@@ -482,12 +498,22 @@ main > .watch-img{
 
 .accordion span{
   position: absolute;
-  top: -10px;
+  top: -20px;
   right: 0;
-  height: 2px;
+  height: 20px;
   width: 20px;
-  background-color: var(--main-dark);
+  background-color: transparent;
   cursor: pointer;
+}
+.accordion span::before{
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  height: 2px;
+  width: 100%;
+  background-color: var(--main-dark);
 }
 
 .accordion ul{
@@ -545,6 +571,8 @@ footer .container{
   margin-bottom: 5px;
 }
 
+
+
 /*=======FOOTER==========*/
 
 /*=======Insights==========*/
@@ -597,23 +625,32 @@ footer .container{
 
 .personal-track .bettry{
   position: relative;
-  height: 20px;
-  width: 20px;
+  border-radius: 50%;
+  padding: 50px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2em;
+  border: 10px solid var(--main-blue);
 }
 
 .personal-track .bettry::before{
-  content: '89%';
+  border-radius: 70%;
+  content: '';
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  
+  left: 0;
+  top: 0;
+  height: 65px;
+  width: 35px;
+  background-color: white;
 }
+
+
 
 .custom-device{
   display: flex;
   align-items: center;
   gap: 20px;
+  justify-content: space-between;
   background-color: #E9EDF5;
   padding: 20px;
   border-radius: 20px;
@@ -660,6 +697,22 @@ footer .container{
   border-radius: 20px;
   padding: 20px;
 }
+
+@media (max-width:972px) {
+  .ins-content{
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width:768px){
+  .track-personal{
+    flex-direction: column;
+    gap: 40px;
+  }
+  .custom-device{
+    width: 100%;
+  }
+}
 /*=======Insights==========*/
 
 /*========Login========*/
@@ -678,6 +731,7 @@ footer .container{
   /* align-items: center; */
   flex-direction: column;
   width: 500px;
+  max-width: 100%;
   gap: 20px;
 }
 .login input{
@@ -752,4 +806,149 @@ footer .container{
   font-size: 0.9em;
 }
 
+.type-inp{
+  width: 40px !important;
+  margin-right: 5px;
+}
+
 /*========Login========*/
+
+/*========Chats========*/
+
+.chat-patient{
+  display: flex;
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.chat-patient .contacts{
+  border-radius: 8px;
+  border: 1px solid #E3E3E3;
+  padding: 20px;
+}
+.user-contact svg{
+  align-self: center;
+  color: var(--main-blue);
+  cursor: pointer;
+  justify-self: flex-end;
+}
+.chat-patient .search-contact{
+  
+}
+
+.chat-patient .search-contact input{
+  background-color: transparent;
+  border: none;
+  padding: 10px 5px;
+  border-bottom: 1px solid #E3E3E3;
+  font-size: 1.1em;
+  width: 100%;
+}
+.chat-patient .search-contact input::placeholder{
+  color: #B1B1B1;
+}
+.chat-patient .search-contact input:focus{
+  outline: none;
+}
+.chat-patient .contacts .type-contact{
+  display: flex;
+  list-style: none;
+  gap: 10px;
+  border-bottom: 1px solid #E3E3E3;
+  margin: 20px 0;
+}
+
+.type-contact li{
+  color: var(--main-dark);
+  padding: 20px 8px;
+  cursor: pointer;
+  position: relative;
+  transition: 0.4s;
+  /* border-bottom: 1px solid; hover*/ 
+}
+
+.type-contact li span{
+  margin-left: 5px;
+  padding: 5px;
+  background-color: #eeee;
+}
+
+.type-contact li::before{
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background-color: var(--main-blue);
+  transition: 0.4s;
+}
+
+.type-contact li:hover::before{
+  width: 90%;
+}
+
+.type-contact li:hover{
+  color: var(--main-blue);
+}
+
+.type-contact li.active{
+  color: var(--main-blue);
+}
+
+.type-contact li.active::before{
+  width: 90%;
+}
+
+
+.user-contact{
+  display: flex;
+  margin-top: 20px;
+  justify-content: space-between;
+}
+
+.user-contact .content-contact{
+  display: flex;
+  gap: 20px;
+
+}
+.user-contact svg{
+  align-self: center;
+  color: var(--main-blue);
+  cursor: pointer;
+}
+
+.user-contact .image-contact{
+  width: 45px;
+  border-radius: 50%;
+  position: relative;
+}
+.user-contact .image-contact::before{
+  content: '';
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  background-color: #34b233;
+}
+.user-contact .image-contact img{
+  width: 100%;
+}
+
+.user-contact .user-info{
+
+}
+
+.user-contact .user-info p{
+  font-size: 1.08em;
+}
+
+.user-contact .user-info span{
+  color: #667085;
+    font-size: 0.9em;
+}
+
+/*========Chats========*/

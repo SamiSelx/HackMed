@@ -24,8 +24,8 @@ export default function CreateAccount({handleNext}){
             <label>Password </label><br></br> <input type="password"  placeholder="Your Password" value={registre.password} onChange={(e)=>setRegistre({...registre,password:e.target.value})}/>
         </div>
         <div style={{display:"flex",alignItems:"center"}}>
-           <div style={{display:"flex",alignItems:"center",width:"30%"}}><input  type="radio" id="doctor" checked={registre.type === "Doctor" ? true : false} onChange={(e)=>setRegistre({...registre,type:e.target.checked ? "Doctor" : ""})}/> <label htmlFor="doctor" style={{width:'250px',cursor:"pointer"}}>Im a Doctor </label></div>
-           <div style={{display:"flex",alignItems:"center",width:'30%'}}><input type="radio" id="patient" checked={registre.type === "Patient" ? true : false} onChange={(e)=>setRegistre({...registre,type:e.target.checked ? "Patient" : ""})}/> <label htmlFor="patient" style={{width:'250px',cursor:"pointer"}}>Im a Patient </label></div>
+           <div style={{display:"flex",alignItems:"center",width:"30%"}}><input className="type-inp"  type="radio" id="doctor" checked={registre.type === "Doctor" ? true : false} onChange={(e)=>setRegistre({...registre,type:e.target.checked ? "Doctor" : ""})}/> <label htmlFor="doctor" style={{width:'250px',cursor:"pointer"}}>Im a Doctor </label></div>
+           <div style={{display:"flex",alignItems:"center",width:'30%'}}><input className="type-inp"  type="radio" id="patient" checked={registre.type === "Patient" ? true : false} onChange={(e)=>setRegistre({...registre,type:e.target.checked ? "Patient" : ""})}/> <label htmlFor="patient" style={{width:'250px',cursor:"pointer"}}>Im a Patient </label></div>
            
         </div>
         <button type="button" className="sign-btn" onClick={handleNext}>Next</button>

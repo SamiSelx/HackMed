@@ -12,9 +12,9 @@ export default function Insights(){
             <h1>Welcome {user.fullName}!</h1>
             <div className="ins-content">
                 <div className="personal-track">
-                    <h1>Personal Health Tracking.</h1>
-                    <div>
-                        <div className="bettry"></div>
+                    <h1 style={{fontSize:'3em'}}>Personal Health Tracking.</h1>
+                    <div className="track-personal" style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginTop:"40px"}}>
+                        <div className="bettry">89% <br></br> Bettry</div>
                     <div className="custom-device">
                         <div>
                             <h2>Customize your device</h2>

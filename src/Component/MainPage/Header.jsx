@@ -1,12 +1,9 @@
 import { Link } from "react-router-dom"
 import Navigator from "./Navigator"
-import { useContext } from "react"
-import { UserContexts } from "../contexts/UserContexts"
 
 //Check user if islogged or not by their token on localStorage
 
 export default function Header(){
-    const user = useContext(UserContexts)
     function handleClickLogOut(){
         if(!window.localStorage.getItem('token')) return
         window.localStorage.setItem('token',"")

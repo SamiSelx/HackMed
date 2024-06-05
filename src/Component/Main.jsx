@@ -1,8 +1,8 @@
-import Landing from './Landing'
-import Pricing from './Pricing'
+import Landing from './MainPage/Landing'
+import Pricing from './Pricing/Pricing'
 import Services from './ServicesComp/Services'
-import About from './About'
-import Footer from './Footer'
+import About from './MainPage/About'
+import Footer from './MainPage/Footer'
 
 export default function Main(){
     return(

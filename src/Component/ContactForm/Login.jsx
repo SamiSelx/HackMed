@@ -11,7 +11,6 @@ export default function Login(){
         axios.post("http://192.168.137.143:3139/api/user/login",
             login
         ).then(res => {
-            console.log(res.data)
             localStorage.setItem('token',res.data.token)
             window.location.href = '/'
         }).catch((e)=>{
@@ -23,9 +22,9 @@ export default function Login(){
     }
     return(
         <div className="login">
-           <div>
+           <div className="container" >
            <h1>Welcome To MOURAFIK</h1>
-            <form action="" onSubmit={(e)=>{handleSubmit(e)}}>
+            <form onSubmit={(e)=>{handleSubmit(e)}}>
                 <div>
                     <label>Email </label> <br></br><input type="text" value={login.email} placeholder="Your Email" onChange={(e)=>setLogin({...login,email:e.target.value})}/>
                 </div>
